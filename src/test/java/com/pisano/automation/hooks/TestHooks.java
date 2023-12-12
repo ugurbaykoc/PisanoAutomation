@@ -60,7 +60,7 @@ public class TestHooks {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
     @AfterStep
-    public void as(Scenario scenario) throws IOException, InterruptedException {
+    public void as(Scenario scenario) throws IOException {
         if (scenario.isFailed()) {
             scenario.attach(Screenshot.getByteScreenshot(), "image/png", "screenshot");
         }
