@@ -72,6 +72,7 @@ An example output of the log structure.
 <img src="/src/resources/images/logs.png" alt="logs" width="320">
 
 An example of the Cucumber Extent Report output
+
 <img src="/src/resources/images/ReportExample.png" alt="ReportExample" width="320">
 
   
