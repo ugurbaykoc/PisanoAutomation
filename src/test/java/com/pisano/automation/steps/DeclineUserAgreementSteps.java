@@ -6,7 +6,8 @@ import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DeclineUserAgreementSteps {
+public class
+DeclineUserAgreementSteps {
     private static final Logger logger = LoggerFactory.getLogger(DeclineUserAgreementSteps.class);
     @And("User agreement is declined")
     public void declineUserAgreement(){

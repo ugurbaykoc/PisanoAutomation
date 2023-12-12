@@ -26,12 +26,7 @@ public class AgreementPageSteps {
         logger.info("Accept user agreement checkbox is clicked");
 
     }
-    @And("User agreement is declined")
-    public void declineUserAgreement(){
-        TestHooks.driver.findElement(By.xpath("(//div[@role='button'])[4]")).click();
-        logger.info("Decline user agreement checkbox is clicked");
 
-    }
     @And("Favorite feedback tool is selected")
     public void selectFavTool(){
         TestHooks.driver.findElement(By.xpath("(//div[@role='button'])[5]")).click();

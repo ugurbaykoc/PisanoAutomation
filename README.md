@@ -66,6 +66,9 @@ In the project, I have utilized the structure you see below;
 
 
 ## Sample Screenshots
+An example of Browser selection, CHROME set as default.
+
+<img src="/src/resources/images/BrowserTypeSelection.png" alt="BrowserTypeSelection" width="320">
 
 An example output of the log structure.
 
