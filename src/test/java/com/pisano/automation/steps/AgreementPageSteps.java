@@ -22,18 +22,21 @@ public class AgreementPageSteps {
     }
     @And("User agreement is accepted")
     public void acceptUserAgreement(){
-        logger.info("Accept user agreement checkbox is clicked");
         TestHooks.driver.findElement(By.xpath("(//div[@role='button'])[3]")).click();
+        logger.info("Accept user agreement checkbox is clicked");
+
     }
     @And("User agreement is declined")
     public void declineUserAgreement(){
-        logger.info("Decline user agreement checkbox is clicked");
         TestHooks.driver.findElement(By.xpath("(//div[@role='button'])[4]")).click();
+        logger.info("Decline user agreement checkbox is clicked");
+
     }
     @And("Favorite feedback tool is selected")
     public void selectFavTool(){
-        logger.info("Favourite Feedback tool is selected");
         TestHooks.driver.findElement(By.xpath("(//div[@role='button'])[5]")).click();
+        logger.info("Favourite Feedback tool is selected");
+
 
     }
 

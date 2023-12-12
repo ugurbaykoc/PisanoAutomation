@@ -62,7 +62,7 @@ public class TestHooks {
     @AfterStep
     public void as(Scenario scenario) throws IOException {
         if (scenario.isFailed()) {
-            scenario.attach(Screenshot.getByteScreenshot(), "image/png", "screenshot");
+            scenario.attach(Helper.getByteScreenshot(), "image/png", "screenshot");
         }
     }
         @AfterAll

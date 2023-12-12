@@ -3,6 +3,7 @@ package com.pisano.automation.steps;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
+import com.pisano.automation.hooks.Helper;
 import com.pisano.automation.hooks.TestHooks;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -13,17 +14,15 @@ import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
 import java.util.Locale;
-import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ContactFormSubmissionSteps {
     private static final Logger logger = LoggerFactory.getLogger(ContactFormSubmissionSteps.class);
     FakeValuesService fakeValuesService = new FakeValuesService(new Locale("en-GB"), new RandomService());
     Locale locale = new Locale("tr");
     Faker faker = new Faker(locale);
+    Helper helper = new Helper();
 
     @When("Email field is filled in")
     public void fillEmail() {
@@ -63,8 +62,9 @@ public class ContactFormSubmissionSteps {
     }
     @And("Phone Number is Filled")
     public void fillPhoneNo(){
-        logger.info("The required input is filled in the phone number section");
         TestHooks.driver.findElement(By.xpath("//input[@type='tel'] ")).sendKeys(faker.numerify("532+###-##-##"));
+        logger.info("The required input is filled in the phone number section");
+
 
 
     }
@@ -77,10 +77,10 @@ public class ContactFormSubmissionSteps {
     }
     @And("See the {string} message")
     public void successMessage(String expectedMessage){
-        logger.info("Feedback form submission is succesful");
         WebElement actualMessageElement = TestHooks.driver.findElement(By.xpath("//div[@class='component']"));
-        String actualMessage = actualMessageElement.getText();
-        assertEquals(expectedMessage, actualMessage);
+        helper.verifyElement(expectedMessage,actualMessageElement);
+        logger.info("Feedback form submission is succesful");
+
     }
     @Then("Page is Refreshed")
     public void refreshPage(){
