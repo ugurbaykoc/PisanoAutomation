@@ -26,19 +26,23 @@ public class ContactFormSubmissionSteps {
 
     @When("Email field is filled in")
     public void fillEmail() {
-        logger.info("The required input is filled in the email section.");
         TestHooks.driver.findElement(By.id("45be6d13-e704-4167-af03-1c6cf2d2b324")).sendKeys(fakeValuesService.bothify("????##@gmail.com"));
+        logger.info("The required input is filled in the email section.");
+
     }
     @And("Name field is filled in")
     public void fillName(){
-        logger.info("The required input is filled in the name section ");
         TestHooks.driver.findElement(By.id("08f93e5a-4b2b-4e06-8468-f32586ed3ca1")).sendKeys((fakeValuesService.regexify("[a-z]{6}")));
+        logger.info("The required input is filled in the name section ");
+
 
     }
     @And("Country Code button is clicked")
-    public void clickCountryCodeBtn(){
+    public void clickCountryCodeBtn() throws InterruptedException {
+        Thread.sleep(1000);
+        TestHooks.driver.findElement(By.className("selected-flag")).click();
         logger.info("Country Code button is clicked");
-        TestHooks.driver.findElement(By.xpath("(//div[@class='selected-flag'])[1]")).click();
+
     }
     @And("Verify the Country code container with {string} placeholder text")
     public void verifyCountryCodeContainer(String expectedText){
