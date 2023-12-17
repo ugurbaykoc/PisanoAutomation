@@ -51,6 +51,7 @@ public class TestHooks {
                 EdgeOptions edgeOptions = new EdgeOptions();
                 edgeOptions.addArguments("--disable-notifications");
                 driver = new EdgeDriver(edgeOptions);
+                break;
             case SAFARI:
                 SafariOptions safariOptions = new SafariOptions();
                 driver = new SafariDriver(safariOptions);
